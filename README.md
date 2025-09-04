@@ -1,17 +1,14 @@
 
 GatherDotnetInfoOutput-JSONs.ps1
 =================================
-This script loops through the root directory $RootPath that you define, looking for all *runtimeconfig.json, *deps.json, *appsettings.json files.
-Then it extracts .NET Framework version or .NET Core versions from framework/tfm tag.
+This script loops through the root directory $RootPath that you define, looking for all *runtimeconfig.json, *deps.json, *appsettings.json files. Then it extracts .NET Framework version or .NET Core versions from framework/tfm tag. This way you have a full inventory other than just a specific .NET version.
 
 
 GatherDotnetInfo-QuynnBell.ps1
 =================================
-This script does everything from https://quynnbell.com/identify-net-and-visual-c-dependencies-using-powershell/. 
-Some loggings are added to match the format as produced by GatherDotnetInfoOutput-JSONs.ps1 for consistency.
+This script does everything from https://quynnbell.com/identify-net-and-visual-c-dependencies-using-powershell/. Quynn Bell developed it exactly to solve the problem of identifying which apps rely on old .NET or Visual C++ runtimes. It effectively correlates each installed application with the specific runtime libraries it depends on. I added some extra logging to match the format as produced by GatherDotnetInfoOutput-JSONs.ps1 for consistency.
 
-This script loops through the root directory $RootPath that you define, checking all EXEs and DLLs to pull the version info. 
-WARNING: this script does run a long time and heavy CPU consumption.
+WARNING: this script does run a long time and have heavy CPU consumption.
 
 
 GatherDotnetInfo-Misc.ps1
