@@ -43,7 +43,7 @@ foreach ($JsonFile in $JsonFiles) {
             $FrameworkVersion = $JsonContent.runtimeOptions.framework.version
             # Output the framework name and version found in runtimeconfig.json to $outputFile
             Add-Content -Path $outputFile -Value "$($JsonFile.FullName),$($JsonFile.Name),$FrameworkName,$FrameworkVersion"
-            #SWrite-Host "runtimeconfig.json: Framework = $FrameworkName, Version = $FrameworkVersion"
+            #Write-Host "runtimeconfig.json: Framework = $FrameworkName, Version = $FrameworkVersion"
         }
         elseif ($JsonContent.runtimeOptions.tfm) {
             Add-Content -Path $outputFile -Value "$($JsonFile.FullName),$($JsonFile.Name),TFM,$($JsonContent.runtimeOptions.tfm)"
@@ -87,4 +87,5 @@ foreach ($JsonFile in $JsonFiles) {
 
  # open the output file for review
  Invoke-Item -Path $outputFile
+
 
